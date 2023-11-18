@@ -10,6 +10,7 @@ COPY .vimrc /root/.vimrc
 # xdebug install(php7環境を構築するときはXdebugは3.1.6以前を指定)
 RUN pecl install xdebug && \
 docker-php-ext-enable xdebug
+# コンテナ内で.htaccessを使えるようにする。
 RUN  a2enmod rewrite
 
 
