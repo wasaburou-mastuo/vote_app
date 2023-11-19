@@ -37,6 +37,7 @@ services:
  #     - ./php/apache2:/etc/apache2
 
       - './alias.conf:/etc/apache2/mods-available/alias.conf'
+      - './apache2.conf:/etc/apache2/apache2.conf'
     ports:
       - 8080:80
     depends_on:
