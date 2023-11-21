@@ -12,3 +12,14 @@ if(preg_match("/(.+(start|end))/i",$uri,$match)){
 define('BASE_IMAGE_PATH',BASE_CONTEXT_PATH . 'images/');
 define('BASE_JS_PATH',BASE_IMAGE_PATH . 'js/');
 define('BASE_CSS_PATH',BASE_IMAGE_PATH . 'css/');
+define('SOURCE_BASE', __DIR__ . '/php/');
+//phpディレクトリまでの絶対パスを定義。(__DIR__はマジック定数、このファイルのルート（C）からの絶対パスを表す)
+
+
+
+// index.phpを経由することで、処理を共通化することができる。
+// register.phpやlogin.phpを直接呼ぶと、それぞれのphpファイルに同じ処理を書く必要があります。
+// そうなると、プログラムの規模が大きくなるにつれて、重複する記述が多くなり、メンテナンスが大変になります。
+// また、何か共通の処理を追加しようとした際にもそれぞれのファイルに処理を追記する必要が出てくるため、
+// 記述ミスや記述漏れによるバグの原因になります。
+// そのため、index.phpを起点にそれぞれの画面を表示するようにしていますね。
